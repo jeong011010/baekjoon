@@ -3,12 +3,21 @@ using namespace std;
 
 
 int main() {
-	int n,j,sum=1;
+	int n,i,j;
 	cin >> n;
-	for (int i = 0; i < n; i++) {
-		cin >> j;
-		sum += j;
+	for (i = 0; i < n; i++) {
+		for (j = 0; j < i; j++)
+			cout << ' ';
+		for (j = i*2-1; j < (n-1) * 2; j++)
+			cout << '*';
+		cout << '\n';
 	}
-	cout << sum - n;
+	for (i = n-1; i > 0; i--) {
+		for (j = 0; j < i-1; j++)
+			cout << ' ';
+		for (j = i * 2 - 1; j < n * 2; j++)
+			cout << '*';
+		cout << '\n';
+	}
 	return 0;
 }

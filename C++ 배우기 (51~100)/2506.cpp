@@ -2,14 +2,14 @@
 using namespace std;
 
 int main(){
-	int n, max=0;
-	double sum = 0;
+	int n, score = 0, tmp, count=0;
 	cin >> n;
-	int* tmp = new int[n];
 	for (int i = 0; i < n; i++) {
-		cin >> tmp[i];
-		if (tmp[i] > max) max = tmp[i];
+		cin >> tmp;
+		if (tmp == 1) score += tmp + count++;
+		else count = 0;
 	}
-	for (int i = 0; i < n; i++) sum += tmp[i] / (double)max * 100;
-	cout << (double)sum / (double)n;
+	cout << score;
+
+	return 0;
 }

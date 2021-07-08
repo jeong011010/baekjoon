@@ -1,20 +1,17 @@
 #include<iostream>
 using namespace std;
 
-int solution(int n, int k) {
-	for (int i = 1; i <= n; i++) {
-		if ((n % i) == 0) {
-			k--;
-			if (k == 0) return i;
-			}
-		}
-	return 0;
-}
-
 int main() {
-	int n, k;
-	cin >> n >> k;
+	int tmp, max, n=1;
+	cin >> max;
+	for (int i = 2; i < 10; i++) {
+		cin >> tmp;
+		if (tmp > max) {
+			n = i;
+			max = tmp;
+		}
+	}
 
-	cout << solution(n, k);
+	cout << max<<'\n'<<n;
 	return 0;
 }
